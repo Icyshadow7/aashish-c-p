@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My C Programming Portfolio</title>
+  <link rel="stylesheet" href="index.css">
+  
+</head>
+<body id="firstt">
+ 
+
+  <h1 class="relate" id="topper">My C Programming Portfolio</h1>
+ 
+    <table border="1">
+      <tr>
+        <th colspan="3"  class="heading">C-progrmming</th>
+      </tr>
+     
+            <th class="second">Sno</th>
+            <th class="second">Topic</th>
+            <th class="second">Link</th>
+        </tr>
+        <tr>
+            <td class="three">1</td>
+            <td class="three">Ascending & Descending Sort Program Using Function</td>
+            <td class="three"><a href="#first" class="click">Click me</a></td>
+        </tr>
+         <tr>
+            <td class="three">2</td>
+            <td class="three">Diamond Pattern</td>
+            <td class="three"><a href="#second" class="click">Click me</a></td>
+        </tr>
+         <tr>
+            <td class="three">3</td>
+            <td class="three">Sum of 2-D Array</td>
+            <td class="three"><a href="#third"class="click">Click me</a></td>
+        </tr>
+       
+    </table>
+  
+
+  <section id="pseudo">
+
+    <h2>Ascending & Descending Sort Program Using Function</h2>
+    <div class="code-block" id="first">
+      <pre>
+        <code>
+#include&lt;stdio.h&gt;
+
+int ascending (int a[],int);
+int descending (int a[],int);
+int main()
+{
+	int i,j,n;
+	printf("Enter the size of array");
+	scanf("%d",&n);
+	int a[n];
+	for(i=0;i&lt;n;i++)
+	{
+		printf("Enter the %d element",i+1);
+		scanf("%d",&a[i]);
+	}
+	ascending(a,n);
+	printf("The arrays in ascending order are :\n");
+	for(i=0;i&lt;n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	printf("\n");
+	descending(a,n);
+		printf("The arrays in descending order are :\n");
+		for(i=0;i&lt;n;i++)
+	{
+		printf("%d ",a[i]);
+	}
+	return 0;
+}
+int ascending(int a[],int n)
+{
+	int i,j,temp;
+	for(i=0;i&lt;n-1;i++)
+	{
+		for(j=i+1;j&lt;n;j++)
+		{
+			if(a[i]&gt;a[j])
+			{
+			temp=a[j];
+			a[j]=a[i];
+			a[i]=temp;	
+			}
+		}
+	}
+}
+int descending(int a[],int n)
+{
+	int i,j,temp;
+	for(i=0;i&lt;n-1;i++)
+	{
+		for(j=i+1;j&lt;n;j++)
+		{
+			if(a[i]&lt;a[j])
+			{
+			temp=a[j];
+			a[j]=a[i];
+			a[i]=temp;	
+			}
+		}
+	}
+}
+</code>
+   </pre>
+   <section id="output" class="image-section">
+    <h2>Program Output Screenshot</h2>
+   
+    <img src="images/1.png" alt="Program Output Screenshot">
+  
+  </section>
+    </div>
+</section>
+ <section id="pseudo">
+
+    <h2>Diamond Pattern Printing</h2>
+    <div class="code-block" id="second">
+      <pre>
+        <code>
+#include&lt;stdio.h&gt;
+
+int main()
+{
+int i,j,k,a,b,c;
+for(i=1;i<=4;i++)
+{
+	for(j=i;j&lt;4;j++)
+	{
+		printf(" ");
+	}
+	for(k=1;k&lt;=i;k++)
+	{
+		printf("* ");
+	}
+	printf("\n");
+}
+for(a=1;a&lt;=3;a++)
+{
+	for(b=1;b&lt;=a;b++)
+	{
+		printf(" ");
+	}
+	for(c=a;c&lt;=3;c++)
+	{
+		printf("* ");
+	}
+	printf("\n")
+;}
+return 0;	
+	
+	
+}
+
+</code>
+   </pre>
+   <section id="output" class="image-section">
+    <h2>Program Output Screenshot</h2>
+   
+    <img src="images/2.png" alt="Program Output Screenshot">
+  
+  </section>
+    </div>
+</section>
+ <section id="pseudo">
+
+    <h2>Sum of 2-D Array</h2>
+    <div class="code-block" id="third">
+      <pre>
+        <code>
+#include&lt;stdio.h&gt;
+
+
+void add (int r,int c,int a[][c], int b[][c]);
+int main()
+{
+	int r,c,i,j;
+	printf("Enter the row  of  matrix ");
+	scanf("%d",&r);
+		printf("Enter the column matrix ");
+	scanf("%d",&c);
+	int a[r][c];
+	int b[r][c];
+	printf("Enter the element of first matrix \n");
+	
+	for(i=0;i&lt;r;i++)
+	{
+		for(j=0;j&lt;c;j++)
+		{
+			printf("Enter %d * %d element of matrix ",i+1,j+1);
+			scanf("%d",&a[i][j]);
+		}
+	}
+		printf("Enter the element of second matrix \n");
+	for(i=0;i&lt;r;i++)
+	{
+		for(j=0;j&lt;c;j++)
+		{
+			printf("Enter %d * %d element of matrix ",i+1,j+1);
+			scanf("%d",&b[i][j]);
+		}
+	}
+	add(r,c,a,b);
+
+	
+}
+void add (int r,int c, int a[][c],int b[][c] )
+{
+	int i,j;
+	int d[r][c];
+	for(i=0;i&lt;r;i++)
+	{
+		for(j=0;j&lt;c;j++)
+		{
+			d[i][j]=a[i][j]+b[i][j];
+		}
+	}
+	
+	printf("The sum of matrix is :\n");
+		for(i=0;i&lt;r;i++)
+	{
+		for(j=0;j&lt;c;j++)
+		{
+			printf("%d   ",d[i][j]);
+		}
+		printf("\n");
+	}
+	
+	
+}
+
+</code>
+   </pre>
+   <section id="output" class="image-section">
+    <h2>Program Output Screenshot</h2>
+   
+    <img src="images/3.png" alt="Program Output Screenshot">
+  
+  </section>
+    </div>
+</section>
+
+   
+  <div class="up">
+   <a href="#firstt"> &#9650;</a>
+  </div>
+</body>
+</html>
