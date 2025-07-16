@@ -48,7 +48,7 @@ html{
       #output{
         position: absolute;
         top: 13%;
-        left: 40%;
+        left: 45%;
 
     }
     pre {
@@ -79,7 +79,8 @@ html{
       
     }
     .image-section img {
-      max-width: 70%;
+      max-width: 80%;
+      max-height: 190%;
       border-radius: 10px;
       box-shadow: 0 0 12px rgba(0, 255, 195, 0.3);
       
@@ -91,16 +92,52 @@ html{
     
     .heading{
         padding: 20px;
+       
     }
     .second {
 padding: 20px;;
     }
      .three {
-padding: 20px;;
+padding: 20px;
+font-family: 'Poppins', sans-serif;
+font-size:20px;
+
     }
     
     
       table{
-      margin-left: 380px; 
+     position:absolute;
+     top:4%;
+     left:28%;
     }
+    .list{
+      position:relative;
+      width:1380px;
+      height:600px;
+    }
+    @media (max-width: 768px) {
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+  }
+
+  .up {
+    font-size: 24px;
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .code-block {
+    padding: 10px;
+  }
+
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+  }
+}
   
